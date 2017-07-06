@@ -10,16 +10,16 @@ exports.config = {
     // The address of a running selenium server.
     seleniumAddress: 'http://localhost:4444/wd/hub',
 
-    // Capabilities to be passed to the webdriver instance.
-    // capabilities: {
-    //     'browserName': 'chrome'
-    // },
-    multiCapabilities: [{
-        'browserName': 'firefox'
+    //Capabilities to be passed to the webdriver instance.
+    capabilities: {
+        'browserName': 'chrome'
     },
-        {
-            'browserName': 'chrome'
-        }],
+    // multiCapabilities: [{
+    //     'browserName': 'firefox'
+    // },
+    //     {
+    //         'browserName': 'chrome'
+    //     }],
     onPrepare: function () {
         browser.driver.manage().window().setPosition(0, 0);
         browser.driver.manage().window().setSize(1280, 900);
@@ -36,5 +36,5 @@ exports.config = {
     // They may include glob patterns.
     specs: ['./e2e/**/*.js']
 
-    // highlightDelay: 500
+    highlightDelay: 500
 };
