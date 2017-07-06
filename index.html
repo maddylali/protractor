@@ -1,0 +1,78 @@
+<!doctype html>
+
+<html lang="en" ng-app="test.app">
+<head>
+    <meta charset="utf-8">
+
+    <title>Programming Test</title>
+    <meta name="description" content="Programming Test">
+    <meta name="author" content="Perk">
+    <link rel="stylesheet" href="css/bootstrap.css">
+
+    <!-- Required Javascript Files -->
+    <script src="scripts/stub/api_responses.js"></script>
+
+    <!-- Vendor Javascript/CSS -->
+    <script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+            integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+            crossorigin="anonymous"></script>
+    <script src="scripts/angular/angular.min.js"></script>
+    <script src="scripts/angular-bootstrap/ui-bootstrap.min.js"></script>
+    <script src="scripts/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="scripts/angular-uuid4/angular-uuid4.min.js"></script>
+    <script src="scripts/js/app.module.js"></script>
+    <script src="scripts/js/mainController.js"></script>
+    <script src="scripts/js/addUserController.js"></script>
+
+    <!-- Your Code Here -->
+    <script>
+        console.log(usersResponse);
+    </script>
+</head>
+
+<body ng-controller="MainController as vm">
+
+<div class="well">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <button ng-click="vm.addUser()"
+                    class="btn btn-primary pull-right">
+                <span class="glyphicons plus white"></span>
+                Add User
+            </button>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="table-responsive col-md-8">
+            <!-- Table -->
+            <table class="table table-striped table-bordered">
+                <tr>
+                    <th>Email</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Is Suspended?</th>
+                    <th>Action</th>
+                </tr>
+                <tr ng-repeat="user in vm.userData track by $index"
+                    ng-style="{'color':(user.is_suspended?'red':'blue')}">
+                    <td>{{user.email}}</td>
+                    <td>{{user.first_name}}</td>
+                    <td>{{user.last_name}}</td>
+                    <td>{{user.is_suspended}}</td>
+                    <td class="center">
+                        <button class="btn btn-primary" ng-click="vm.editUser($index)">Edit</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>
+</body>
+</html>

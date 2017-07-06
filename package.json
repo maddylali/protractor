@@ -1,0 +1,26 @@
+{
+  "name": "programming-test",
+  "version": "1.0.0",
+  "description": "An API endpoint has been called which returns a JSON in the following format:",
+  "main": "gulp.js",
+  "scripts": {
+    "test": "protractor test/conf.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "1.5.0",
+    "angular-bootstrap": "*",
+    "angular-uuid4": "*",
+    "bootstrap": "^3.3.7",
+    "browser-sync": "*",
+    "del": "^1.2.0",
+    "gulp": "^3.9.0",
+    "run-sequence": "*"
+  },
+  "devDependencies": {
+    "protractor-html-screenshot-reporter": "0.0.21",
+    "protractor-jasmine2-html-reporter": "0.0.7",
+    "protractor-jasmine2-screenshot-reporter": "^0.4.0"
+  }
+}
